@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQueryEvents</title>
+    <script src="jquery-3.6.1.js"></script>
+    <script>
+        $(document).ready(function(){
+        
+        //EventQuery1:
+            $('#button1').click(function(){
+                window.alert('Button1 has been clicked');
+            });
+        
+        //EventQuery2:
+            $('#button2').bind('click',function(){
+                window.alert('Button2 has been clicked');
+            });
+
+        //EventQuery3:
+            $('#button3').on('click',function(){
+                window.alert('Button3 has been clicked');
+            });
+
+        //EventQuery4:
+            $('body').on('click','#button4,#button5',function(){
+                window.alert('Either Button4 or Button5 has been clicked');
+            });
+
+        //EventQuery5:
+            // $('div').css('background-color','silver');
+            // $('div').width('400px').height('400px');
+            // $('div').on('click mouseenter mouseleave', function(){
+            //     window.alert('div is either clicked on, the mouse entered it, or the mouse left it');
+            // });
+
+        //EventQuery6:
+            $('#div1').css('background-color','silver');
+            $('#div1').width('400px').height('400px');
+            $('body').on({
+                click: function(){
+                $('#span1').text('Clicked the span tag')
+                },
+                mouseenter: function(){
+                    $('#span1').text('Entered in the span tag');
+                },
+                mouseleave: function(){
+                    $('#span1').text('Leaved the span tag');
+                },
+            },'#div1');
+
+        //EventQuery7:
+            $('#moduleMediaLink').click(function(event){
+                event.preventDefault();
+                $(this).css('color','red');
+                window.alert(event.target.nodeName + " triggered the event.");
+            });
+        
+        //EventQuery8:
+            $(window).resize(function(){
+                $('#div2').text('Width: ' + $(window).width()+ ' & Height: ' + $(window).height());
+            });
+
+        //EventQuery9:
+            $('input').on( {
+                focus: function(){
+                    $('#input1').css('background-color','silver');},
+                blur: function(){
+                    $('#input1').css('background-color','white');}
+                });
+            
+        //EventQuery10:        
+            $('#form1').on('submit',function (event) {           
+                //validate the Name entry
+                var name = $('#name').val().trim();
+                if (name == '') {
+                    $('#name').css('border','1px solid red');
+                    window.alert('Enter your Name'); 
+                }  
+                else {
+                    $('#name').css('border','1px solid green');
+                }
+                //validate the email entry
+                var email = $('#email').val().trim();
+                if (email == '') {
+                    $('#email').css('border','1px solid red');
+                    window.alert('Enter your Email'); 
+                }  
+                else {
+                    $('#email').css('border','1px solid green');
+                }
+                event.preventDefault();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    Event Query 1:<br><br><button id="button1">Click button1 for question 1</button><br><br><br>
+
+    Event Query 2:<br><br><button id="button2">Click button2 for question 2</button><br><br><br>
+
+    Event Query 3:<br><br><button id="button3">Click button3 for question 3</button><br><br><br>
+
+    Event Query 4:<br><br><button id="button4">Click button4 for question 4</button><br><br>
+
+    <button id="button5">Click button5 for question 4</button><br><br><br>
+
+    Event Query 5 & 6:<br><br><div id="div1">This is my Div1 Tag.</div>
+
+    User Activity:<span id="span1"></span><br><br><br>
+
+    Event Query 7:<br><br> <a href="https://www.hugedomains.com/domain_profile.cfm?d=modulemedia.com" id="moduleMediaLink">Redirect to Module Media page</a><br><br><br>
+
+    Event Query 8:<br><br> <div id="div2"></div><br><br><br>
+
+   Event Query 9:<br><br><input id="input1" type="text" ><br><br><br>
+
+   Event Query 10:<br><br>
+   <form id="form1">
+    <input id="name" type="text"><br><br>
+    <input id="email" type="email"><br><br>
+    <input type="submit">
+   </form>
+   
+
+</body>
+</html>
