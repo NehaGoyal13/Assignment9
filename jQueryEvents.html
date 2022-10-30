@@ -41,13 +41,13 @@
             $('#div1').width('400px').height('400px');
             $('body').on({
                 click: function(){
-                $('#span1').text('Clicked the span tag')
+                $('#span1').text('User clicked the span tag')
                 },
                 mouseenter: function(){
-                    $('#span1').text('Entered in the span tag');
+                    $('#span1').text('User entered into the span tag');
                 },
                 mouseleave: function(){
-                    $('#span1').text('Leaved the span tag');
+                    $('#span1').text('User left the span tag');
                 },
             },'#div1');
 
@@ -66,7 +66,7 @@
         //EventQuery9:
             $('input').on( {
                 focus: function(){
-                    $('#input1').css('background-color','silver');},
+                    $('#input1').css('background-color','lightgray');},
                 blur: function(){
                     $('#input1').css('background-color','white');}
                 });
@@ -77,7 +77,7 @@
                 var name = $('#name').val().trim();
                 if (name == '') {
                     $('#name').css('border','1px solid red');
-                    window.alert('Enter your Name'); 
+                    window.alert('Please enter your Name'); 
                 }  
                 else {
                     $('#name').css('border','1px solid green');
@@ -86,7 +86,7 @@
                 var email = $('#email').val().trim();
                 if (email == '') {
                     $('#email').css('border','1px solid red');
-                    window.alert('Enter your Email'); 
+                    window.alert('Please enter your Email address'); 
                 }  
                 else {
                     $('#email').css('border','1px solid green');
@@ -98,25 +98,34 @@
 </head>
 
 <body>
-    Event Query 1:<br><br><button id="button1">Click button1 for question 1</button><br><br><br>
+    Event Query 1:<br><br>
+    <button id="button1">Click button1</button><br><br><br>
 
-    Event Query 2:<br><br><button id="button2">Click button2 for question 2</button><br><br><br>
+    Event Query 2:<br><br>
+    <button id="button2">Click button2</button><br><br><br>
 
-    Event Query 3:<br><br><button id="button3">Click button3 for question 3</button><br><br><br>
+    Event Query 3:<br><br>
+    <button id="button3">Click button3</button><br><br><br>
 
-    Event Query 4:<br><br><button id="button4">Click button4 for question 4</button><br><br>
+    Event Query 4:<br><br>
+    <button id="button4">Click button4</button><br><br>
 
-    <button id="button5">Click button5 for question 4</button><br><br><br>
+    <button id="button5">Click button5</button><br><br><br>
 
-    Event Query 5 & 6:<br><br><div id="div1">This is my Div1 Tag.</div>
+    Event Query 5 & 6: <br><br>
+    <div id="div1">This is my Div1 Tag.</div>
 
-    User Activity:<span id="span1"></span><br><br><br>
+    User Activity: 
+    <span id="span1"></span><br><br><br>
 
-    Event Query 7:<br><br> <a href="https://www.hugedomains.com/domain_profile.cfm?d=modulemedia.com" id="moduleMediaLink">Redirect to Module Media page</a><br><br><br>
+    Event Query 7:<br><br> 
+    <a href="https://www.hugedomains.com/domain_profile.cfm?d=modulemedia.com" id="moduleMediaLink">Redirect to Module Media page</a><br><br><br>
 
-    Event Query 8:<br><br> <div id="div2"></div><br><br><br>
+    Event Query 8:<br><br> 
+    <div id="div2"></div><br><br><br>
 
-   Event Query 9:<br><br><input id="input1" type="text" ><br><br><br>
+   Event Query 9:<br><br>
+   <input id="input1" type="text" ><br><br><br>
 
    Event Query 10:<br><br>
    <form id="form1">
